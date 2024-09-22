@@ -1,0 +1,55 @@
+{
+  "name": "astro-hyperscript",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A simple hyperscript implementation for Astro",
+  "license": "MIT",
+  "keywords": [
+    "astro",
+    "withastro",
+    "astro-integration",
+    "astro-component",
+    "hyperscript",
+    "hyperscript.org",
+    "hyperscript-org",
+    "htmx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+github.com/adamNewell/astro-hyperscript.git"
+  },
+  "author": {
+    "name": "Adam Newell",
+    "email": "adamdouglasnewell@gmail.com",
+    "url": "https://adamdouglasnewell.com"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/html-escaper": "^3.0.2",
+    "@types/node": "^22.6.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "astro": "^4.15.9",
+    "hyperscript.org": ">= 0.9.12"
+  },
+  "scripts": {
+    "build": "tsc",
+    "link": "npm link",
+    "unlink": "npm unlink astro-hyperscript",
+    "link:example": "cp package.json dist/ && cd dist && npm link && cd ../example && npm link astro-hyperscript",
+    "unlink:example": "cd example && npm unlink astro-hyperscript",
+    "setup:dev": "npm run build && npm run link && npm run link:example",
+    "cleanup:dev": "npm run unlink:example && npm run unlink"
+  },
+  "publishConfig": {
+    "directory": "dist"
+  }
+}

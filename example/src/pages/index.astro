@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+let isSubmitted = false;
+if (Astro.request.method === "POST") {
+  isSubmitted = true;
+}
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <button _="on click call alert('You clicked me!')">Click me</button>
+  </main>
+</Layout>
